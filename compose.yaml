@@ -1,0 +1,17 @@
+services:
+  web:
+    networks:
+      statik:
+        ipv4_address: 172.31.0.77
+
+    build:
+      context: app
+      target: builder
+    # flask requires SIGINT to stop gracefully
+    # (default stop signal from Compose is SIGTERM)
+    stop_signal: SIGINT
+
+networks:
+  statik:
+    external: true
+    name: statik

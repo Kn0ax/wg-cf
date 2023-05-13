@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <title>WireGuard Installation and Configuration Guide</title>
+ <script src="https://cdn.tailwindcss.com"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-gray-100">
+ <div class="container mx-auto p-8 flex flex-col items-center">
+  <h1 class="text-4xl font-bold mb-8">WireGuard Installation and Configuration Guide</h1>
+
+  <div class="w-full max-w-lg text-center">
+   <h2 class="text-2xl font-bold mb-4">Installing WireGuard on Various Devices</h2>
+
+   <div id="windowsBtn" class="mb-4" style="display: none;">
+    <a href="https://download.wireguard.com/windows-client/wireguard-installer.exe">
+     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      <i class="fab fa-windows"></i> Download Windows Installer
+     </button>
+    </a>
+   </div>
+
+   <div id="macBtn" class="mb-4" style="display: none;">
+    <a href="https://itunes.apple.com/us/app/wireguard/id1451685025?ls=1&mt=12">
+     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      <i class="fab fa-apple"></i> Download macOS Installer
+     </button>
+    </a>
+   </div>
+
+   <div id="androidBtn" class="mb-4" style="display: none;">
+    <a href="https://play.google.com/store/apps/details?id=com.wireguard.android">
+     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      <i class="fab fa-android"></i> Download Android App
+     </button>
+    </a>
+   </div>
+
+   <div id="iOSBtn" class="mb-4" style="display: none;">
+    <a href="https://itunes.apple.com/us/app/wireguard/id1441195209?ls=1&mt=8">
+     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      <i class="fab fa-apple"></i> Download iOS App
+     </button>
+    </a>
+   </div>
+
+   <div id="linuxBtn" class="mb-4" style="display: none;">
+    <a href="https://www.wireguard.com/install/">
+     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      <i class="fab fa-linux"></i> Download Linux Installer
+     </button>
+    </a>
+   </div>
+  </div>
+  <div class="w-full max-w-lg">
+   <h2 class="text-2xl font-bold mb-4">Importing WireGuard Configuration File</h2>
+   <ol class="list-decimal ml-8 mb-8">
+    <li>Open the WireGuard app</li>
+    <li>Click the "Add tunnel" button</li>
+    <li>Click the "Create from file or archive" button</li>
+    <li>Select the configuration file you downloaded</li>
+    <li>Click "Add" to import the file</li>
+   </ol>
+  </div>
+
+  <div class="w-full max-w-lg">
+   <h2 class="text-2xl font-bold mb-4">Download Configuration File</h2>
+   <p class="mb-4">
+    To download your WireGuard configuration file, click the button below:
+   </p>
+   <p>
+    <a href="/config?={{ filename }}.conf" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+     <i class="fas fa-download"></i> Download Configuration File
+    </a>
+   </p>
+  </div>
+
+  <div class="w-full max-w-lg">
+   <h2 class="text-2xl font-bold mb-4 mt-4">Configuration File Import Instructions</h2>
+   <p class="mb-4">
+    To import your configuration file into WireGuard, follow the instructions above.
+   </p>
+   <p>
+    Here's an example animation of the import process:
+   </p>
+   <img src="https://cdn.kn0ax.com/i/YuZZCeFn" alt="WireGuard configuration import animation" class="mt-4">
+  </div>
+ </div>
+ <script>
+  var userAgent = navigator.userAgent.toLowerCase();
+  var platform = "";
+
+  if (userAgent.indexOf("win") >= 0) {
+   platform = "Windows";
+   document.getElementById("windowsBtn").style.display = "block";
+  } else if (userAgent.indexOf("mac") >= 0) {
+   platform = "macOS";
+   document.getElementById("macBtn").style.display = "block";
+  } else if (userAgent.indexOf("android") >= 0) {
+   platform = "Android";
+   document.getElementById("androidBtn").style.display = "block";
+  } else if (
+   userAgent.indexOf("iphone") >= 0 ||
+   userAgent.indexOf("ipad") >= 0 ||
+   userAgent.indexOf("ipod") >= 0
+  ) {
+   platform = "iOS";
+   document.getElementById("iOSBtn").style.display = "block";
+  } else if (userAgent.indexOf("linux") >= 0) {
+   platform = "Linux";
+   document.getElementById("linuxBtn").style.display = "block";
+  }
+ </script>
+</body>
+
+</html>
